@@ -13,3 +13,16 @@ def get_letter_count (input_text):
             letter_dict[char] = 1
 
     return letter_dict
+
+def sort_on_count(item):
+    return item["num"]
+
+def sorted_letter_dict (input_dict):
+    sorted_list = []
+    for item in input_dict:
+        entry = {"char": item[0], "num": item[1]}
+        sorted_list.append(entry)
+    sorted_list.sort(key=sort_on_count, reverse=True)
+    for item in sorted_list:
+        print(item["char"] + ": " + str(item["num"]))
+    return
